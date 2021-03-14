@@ -1,7 +1,6 @@
-// Импорт внутренних модулей node (fs, path)
 const fs = require('fs');
 const path = require('path');
-// ------------------------------
+const shortid = require('shortid');
 
 const contactsPath = path.resolve('./db', 'contacts.json');
 
@@ -63,7 +62,7 @@ function addContact(name, email, phone) {
             name,
             email,
             phone,
-            id: contacts.length + 1
+            id: shortid.generate(),
         };
         contacts.push(addNewContact);
          
